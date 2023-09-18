@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+body {
+  background-color: #F2F0E9;
+  height: 100vh;  
+  margin: 20px;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#gallery {
+  height: 140vmax;
+  width: 140vmax;
+  position: absolute;
+  opacity: 0; 
+  transition: opacity 800ms ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gallery {
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tile {
+  border-radius: 1vmax;
+  position: absolute;
+  transition: transform 800ms ease;
 }
 
-.App-link {
-  color: #61dafb;
+.tile:hover {
+  transform: scale(1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tile:hover > img {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+.tile > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.tile:nth-child(1) {
+  background-color: rgb(255, 238, 88);
+  height: 14%;
+  width: 10%;
+  left: 5%;
+  top: 5%;
+}
+
+.tile:nth-child(2) {
+  background-color: rgb(66, 165, 245);
+  height: 10%;
+  width: 15%;
+  left: 20%;
+  top: 10%;
+}
+
+.tile:nth-child(3) {
+  background-color: rgb(239, 83, 80);
+  height: 18%;
+  width: 10%;
+  left: 20%;
+  top: 25%;
+}
+
+.tile:nth-child(4) {
+  background-color: rgb(102, 187, 106);
+  height: 10%;
+  width: 14%;
+  left: 2%;
+  top: 30%;
+}
+
+.tile:nth-child(5) {
+  background-color: rgb(145, 105, 255);
+  font-size: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+  height: 10%;
+  width: 15%;
+  left: 70%;
+  top: 3%;
+}
+
+.tile:nth-child(6) {
+  background-color: rgb(255, 167, 38);
+  height: 14%;
+  width: 10%;
+  left: 40%;
+  top: 10%;
+}
+
+.tile:nth-child(7) {
+  background-color: rgb(0, 0, 0);
+  height: 10%;
+  width: 10%;
+  left: 55%;
+  top: 5%;
+}
+
+.tile:nth-child(8) {
+  background-color: rgb(141, 110, 99);
+  height: 14%;
+  width: 10%;
+  left: 60%;
+  top: 20%;
+}
+
+.tile:nth-child(9) {
+  background-color: rgb(91, 222, 123);
+  height: 10%;
+  width: 10%;
+  left: 48%;
+  top: 30%;
+}
+
+.tile:nth-child(10) {
+  background-color: rgb(255, 238, 88);
+  height: 14%;
+  width: 10%;
+  left: 5%;
+  top: 50%;
+}
+
+.tile:nth-child(11) {
+  background-color: rgb(66, 165, 245);
+  height: 14%;
+  width: 10%;
+  left: 23%;
+  top: 48%;
+}
+
+.tile:nth-child(12) {
+  background-color: rgb(239, 83, 80);
+  height: 10%;
+  width: 18%;
+  left: 40%;
+  top: 45%;
+}
+
+.tile:nth-child(13) {
+  background-color: rgb(102, 187, 106);
+  height: 14%;
+  width: 10%;
+  left: 45%;
+  top: 65%;
+}
+
+.tile:nth-child(14) {
+  background-color: rgb(171, 71, 188);
+  height: 16%;
+  width: 10%;
+  left: 65%;
+  top: 40%;
+}
+
+.tile:nth-child(15) {
+  background-color: rgb(255, 167, 38);
+  height: 14%;
+  width: 10%;
+  left: 60%;
+  top: 60%;
+}
+
+.tile:nth-child(16) {
+  background-color: rgb(0, 0, 0);
+  height: 16%;
+  width: 10%;
+  left: 8%;
+  top: 70%;
+}
+
+.tile:nth-child(17) {
+  background-color: rgb(141, 110, 99);
+  height: 14%;
+  width: 10%;
+  left: 80%;
+  top: 15%;
+}
+
+.tile:nth-child(18) {
+  background-color: rgb(130, 130, 130);
+  height: 10%;
+  width: 16%;
+  left: 25%;
+  top: 70%;
+}
+
+.tile:nth-child(19) {
+  background-color: rgb(255, 68, 0);
+  height: 10%;
+  width: 10%;
+  left: 80%;
+  top: 45%;
+}
+
+.tile:nth-child(20) {
+  background-color: rgb(255, 163, 163);
+  height: 10%;
+  width: 15%;
+  left: 75%;
+  top: 65%;
+}
+
+.fixed-text {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  opacity: 0;
+}
+
+.fixed-text.visible {
+  opacity: 1;
+  transition: opacity 2s ease; /* Apply the transition here */
+}
+
+.fixed-text.hidden {
+  opacity: 1;
 }
